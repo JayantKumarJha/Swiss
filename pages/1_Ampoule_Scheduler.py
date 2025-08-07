@@ -47,8 +47,8 @@ if uploaded_file:
 
     # ✅ Assign speed using override or "speed" column
     def get_speed(row):
-        if not pd.isna(row.get("speed")):
-            return row["speed"]
+        if not pd.isna(row.get("Speed")):
+            return row["Speed"]
         return override_speed.get(row["Pack Size(ml)"], 100)
 
     df["Speed"] = df.apply(get_speed, axis=1)
