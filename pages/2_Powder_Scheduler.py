@@ -43,8 +43,8 @@ if uploaded_file:
         override_speed[size] = st.sidebar.number_input(f"Speed for {size}", 1, 1000, value=default)
 
     def get_speed(row):
-        if not pd.isna(row.get("speed")):
-            return row["speed"]
+        if not pd.isna(row.get("Speed")):
+            return row["Speed"]
         return override_speed.get(row["Pack Size(ml)"], 50)
 
     df["Speed"] = df.apply(get_speed, axis=1)
