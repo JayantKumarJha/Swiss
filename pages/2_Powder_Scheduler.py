@@ -81,7 +81,7 @@ if uploaded_file:
     # Remove oversized batches
     fit_batches, too_big_batches = [], []
     for b in batches:
-        if b["Duration"] + CHANGEOVER > MAX_TIME:
+        if b["Duration"] > MAX_TIME:
             too_big_batches.append(b)
         else:
             fit_batches.append(b)
