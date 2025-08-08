@@ -89,7 +89,7 @@ if uploaded_file:
     # ✅ Filter out batches that don't fit in a day
     fit_batches, too_big_batches = [], []
     for b in batches:
-        if b["Duration"] + CHANGEOVER > MAX_TIME:
+        if b["Duration"] > MAX_TIME:
             too_big_batches.append(b)
         else:
             fit_batches.append(b)
